@@ -1,3 +1,21 @@
+# Encrypt & Decrypt files
+
+encrypt and decrypt files using python
+
+
+# To have a copy of this project 
+
+```git clone git@github.com:makan-dianka/encrypt.git```
+
+move to the project folder
+
+```cd encrypt```
+
+install the dependances
+
+```pip install -r requirements.txt```
+
+
 # Encrypt and Decrypt files
 execute ```python makan.py``` to encrypt or decrypt files
 ## Generate cryptage's key
