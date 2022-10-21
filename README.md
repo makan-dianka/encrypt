@@ -2,9 +2,6 @@
 
 encrypt and decrypt files using python
 
-<img src="/media/img/enc.png" />
-
-
 # To have a copy of this project 
 
 ```git clone git@github.com:makan-dianka/encrypt.git```
@@ -60,3 +57,12 @@ execute ```python genkey.py``` to generate cryptage's key
 # Becarefull
 the key that you use to encrypt the files, you must you the same key to decrypt the same files.
 e.g ```mk -e /home/pydev/ --file toto.pdf titi.txt --key-use default``` here i use default key to encrypt the files. To decrypt the files is mandatory to you the same key e.g ```mk --decrypt /home/pydev/ --file toto.pdf titi.txt --key-use default``` here i use the same key default to decrypt the same files
+ 
+ # Demo 
+ 
+<img src="/media/gif/enc.gif" />
+
+
+# Screen Capture
+
+<img src="/media/img/enc.png" />
