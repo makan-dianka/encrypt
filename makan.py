@@ -14,6 +14,5 @@ if manager.option0 == manager.keyword:
             manager.decrypt_all_files()
     else:
         raise Exception(f"{manager.keyword} ne reconnait cette option: {manager.option1}")
-        print(f"taper: {manager.keyword} --help or {manager.keyword} -h pour voir les options")
 else:
     print(f"keyword incorrect: {manager.option0}")
