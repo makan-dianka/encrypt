@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+
+import sys
+if sys.version_info[0] !=3: 
+    print("""--------------------------------------
+    REQUIRED PYTHON 3.x
+    use: python3 makan.py
+
+    author: Makan
+    website: www.makandianka.org
+--------------------------------------""")
+    sys.exit()
+
 import manager
 
 if manager.option0 == manager.keyword:
