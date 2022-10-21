@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from secret import Confidence
 import cmd
 import os
