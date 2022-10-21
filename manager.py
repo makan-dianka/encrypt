@@ -44,7 +44,8 @@ else:
                         else:
                             raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
-                        print(f"Ceci est un dossier: {filename}")
+                        pass
+                        # print(f"Ceci est un dossier: {filename}")
                 else:
                     print(f"Ce fichier n'existe pas: {filename}")
 
@@ -66,7 +67,8 @@ else:
                         else:
                             raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
-                        print(f"Ceci est un dossier: {filename}")
+                        pass
+                        # print(f"Ceci est un dossier: {p}")
 
 
     def files_for_decrypt():
@@ -95,7 +97,8 @@ else:
                     else:
                         raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                 else:
-                    print(f"Ceci est un dossier: {filename}")
+                    pass
+                    # print(f"Ceci est un dossier: {filename}")
             else:
                 print(f"Ce repertoire n'existe pas: {filename}")
 
@@ -117,4 +120,5 @@ else:
                         else:
                             raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
-                        print(f"Ceci est un dossier: {filename}")
+                        pass
+                        # print(f"Ceci est un dossier: {p}")
