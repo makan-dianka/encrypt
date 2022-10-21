@@ -13,7 +13,7 @@ if manager.option0 == manager.keyword:
         if manager.option3 in ['-fs', '--files']:
             manager.decrypt_all_files()
     else:
-        raise Exception(f"makan ne reconnait cette option: {manager.option1}")
-        print("taper: makan --help or makan -h pour voir les options")
+        raise Exception(f"{manager.keyword} ne reconnait cette option: {manager.option1}")
+        print(f"taper: {manager.keyword} --help or {manager.keyword} -h pour voir les options")
 else:
     print(f"keyword incorrect: {manager.option0}")

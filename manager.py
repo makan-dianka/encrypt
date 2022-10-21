@@ -1,13 +1,10 @@
 from secret import Confidence
 import os
+import cmd 
 
-def getcmd():
-    cmd = input("Commande > ")
-    join = cmd.replace(' ', ';')
-    listcmd = join.split(';')
-    return listcmd
+keyword = 'mk'
 
-listcmd = getcmd()
+listcmd = cmd.getcmd()
 
 try:
     path = listcmd[2]
@@ -17,12 +14,9 @@ try:
     optionk = listcmd[-2]
     keyname = listcmd[-1]
 except:
-    raise Exception("\033[31mSyntax Error, assurez vous de donner toutes les arguments: makan --help pour voir l'aide\n")
+    raise Exception(f"\033[31mSyntax Error, assurez vous de donner toutes les arguments: {keyword} --help pour voir l'aide\n")
 else:
     key = keyname+'.key'
-
-    keyword = 'makan'
-
 
     def files_for_encrypt():
         if option0.lower() == keyword:
@@ -48,7 +42,7 @@ else:
                             else:
                                 print(f'Cette clé d\'encryptage n\'existe pas: {keyname}')
                         else:
-                            raise Exception(f"makan ne reconnait cette option: {optionk}")
+                            raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
                         print(f"Ceci est un dossier: {filename}")
                 else:
@@ -70,7 +64,7 @@ else:
                             else:
                                 print(f'Cette clé d\'encryptage n\'existe pas: {keyname}')
                         else:
-                            raise Exception(f"makan ne reconnait cette option: {optionk}")
+                            raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
                         print(f"Ceci est un dossier: {filename}")
 
@@ -99,7 +93,7 @@ else:
                         else:
                             print(f'Cette clé de decryptage n\'existe pas: {keyname}')
                     else:
-                        raise Exception(f"makan ne reconnait cette option: {optionk}")
+                        raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                 else:
                     print(f"Ceci est un dossier: {filename}")
             else:
@@ -121,6 +115,6 @@ else:
                             else:
                                 print(f'Cette clé de decryptage n\'existe pas: {keyname}')
                         else:
-                            raise Exception(f"makan ne reconnait cette option: {optionk}")
+                            raise Exception(f"{keyword} ne reconnait cette option: {optionk}")
                     else:
                         print(f"Ceci est un dossier: {filename}")
