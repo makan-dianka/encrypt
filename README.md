@@ -2,6 +2,8 @@
 
 encrypt and decrypt files using python
 
+<img src="/media/img/enc.png" />
+
 
 # To have a copy of this project 
 
