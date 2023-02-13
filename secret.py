@@ -35,8 +35,7 @@ class Confidence:
             encrypted = enc_file.read()
         try:
             decrypted = fernet.decrypt(encrypted)
-        except:
-            pass
-        else:
             with open(filename, 'wb') as dec_file:
                 dec_file.write(decrypted)
+        except:
+            pass
