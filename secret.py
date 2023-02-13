@@ -1,6 +1,22 @@
 from cryptography.fernet import Fernet
+import os
+from mysql import connector
 
 class Confidence:
+
+    def conndb(self):
+        conn = connector.connect(
+            user="pydev",
+            password="pydev",
+            database="confidence",
+            auth_plugin='mysql_native_password'
+        )
+
+        cursor = conn.cursor()
+        cursor.execute("SELECT cle FROM secret where nom='private';")
+        key = cursor.fetchall()[0][0]
+        return key
+
     def genkey(self, keyname):
         """Generate a key"""
         key = Fernet.generate_key()
@@ -8,14 +24,15 @@ class Confidence:
             filekey.write(key)
 
     def readkey(self, keyname):
-        "read key"
-        with open(f'keys/{keyname}', 'rb') as filekey:
+        keynam = os.path.expanduser(f"~/keys/{keyname}")
+        with open(f'{keynam}', 'rb') as filekey:
             key = filekey.read()
         return key
 
     def encrypt(self, keyname, filename):
-        """encrypt a files"""        
-        key = self.readkey(keyname)
+        """encrypt a files"""
+        keynam = f"{keyname}"      
+        key = self.readkey(keynam)
         fernet = Fernet(key)
         
         with open(filename, 'rb') as file:
@@ -28,7 +45,8 @@ class Confidence:
 
     def decrypt(self, keyname, filename):
         """Decrypt a file"""
-        key = self.readkey(keyname)
+        keynam = f"{keyname}"
+        key = self.readkey(keynam)
         fernet = Fernet(key)
 
         with open(filename, 'rb') as enc_file:
