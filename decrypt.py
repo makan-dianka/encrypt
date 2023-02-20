@@ -19,6 +19,8 @@ def decrypt_files(dirname, key="private.key"):
             if os.path.isfile(file):
                 files.decrypt(key, file)
                 print(f'\033[32mFichier decrypté avec succès: {file}\033[00m')
+    else:
+        print(f"\nDossier \033[31m{path_home_user}{dirname}\033[00m n'existe pas\n")
 
 if __name__=="__main__":
     args = sys.argv
@@ -27,3 +29,10 @@ if __name__=="__main__":
         if len(params) == 2:
             if params[0] in ['-fld', '--folder']:
                 decrypt_files(params[1])
+            else:
+                print(f"\n Flag \033[31m{params[0]}\033[00m n'est pas reconnu.")
+                print("\n\033[33mINFO USAGE\033[00m [    \033[33m-fld\033[00m   or  \033[33m--folder\033[00m   ] + \033[33mfolder name\033[00m\n")
+        else:
+            print("\n\033[33mUSAGE\033[00m [    \033[33m-fld\033[00m   or  \033[33m--folder\033[00m   ] + \033[33mfolder name\033[00m\n")
+    else:
+        print("\n\033[33mUSAGE\033[00m [    \033[33m-fld\033[00m   or  \033[33m--folder\033[00m   ] + \033[33mfolder name\033[00m\n")
